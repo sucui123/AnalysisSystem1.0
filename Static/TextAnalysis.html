@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
+</head>
+<body>
+
+
+<p>choose passage:
+    <select name="列表名称">
+        <option value="china">passage1</option>
+        <option value="us">passage2</option>
+        <option value="eth" selected>passage3</option>
+        <option value="india">passage4</option>
+    </select>
+
+</p>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width: 800px;height:600px;"></div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: 'The result'
+        },
+        tooltip: {},
+        legend: {
+            data:['frequency']
+        },
+        xAxis: {
+            data: ["word1","word2","word3","word4","word5","word6"]
+        },
+        yAxis: {},
+        series: [{
+            name: 'frequency',
+            type: 'bar',
+            data: [5, 20, 36, 10, 10, 20]
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
